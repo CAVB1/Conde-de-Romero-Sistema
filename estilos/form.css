@@ -1,0 +1,175 @@
+*{box-sizing:border-box;}
+
+form{
+	width:800px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+form label{
+	width:300px;
+	font-weight:bold;
+	display:inline-block;
+    justify-content: center;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:200px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+select{
+    padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+.foto{
+
+    padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+
+}
+
+
+
+form input[type="submit"]{
+	width:80%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:00%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	/*resize: vertical | horizontal | none | both*/
+	resize:none;
+	display:block;
+}
+
+.formu{
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+}
+
+
+.formu input[type=text]{
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+.formu input[type=file]{
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+	margin-top: 10px;
+    
+}
+
+
+.formu input[type=select]{
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+	margin-top: 10px;
+    
+}
+
+
+
+.multiselect {
+	width: 200px;
+	
+}
+
+.selectBox {
+	
+}
+
+.selectBox select {
+	width: 100%;
+	font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 300;
+}
+
+.overSelect {
+	
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#checkboxes {
+	display: block;
+	border: 1px #dadada solid;
+	
+	width:200px;
+	background-color:white;
+	box-sizing: border-box;
+	overflow-y:auto;
+	max-height:110px;
+	
+    
+
+}
+#checkboxes.hide {display:none;}
+
+#checkboxes label {
+	display: block;
+}
+
+#checkboxes label:hover {
+	background-color: #1e90ff;
+}
+
+
+
