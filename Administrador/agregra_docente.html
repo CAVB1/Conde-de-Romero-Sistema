@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Docente</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="../estilos/barra.css">
-    <link rel="stylesheet" href="../estilos/form.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'> 
     <link rel="stylesheet" href="../estilos/barra1.css">
+    <link rel="stylesheet" href="../estilos/agregar_docente.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
@@ -39,94 +38,35 @@
           </a>
     </div>
 
-    <div class="formu">
-        <form action="#" target="" method="get" name="formDatosPersonales">
-
+    <div class="div1">
+        <div class="card">
             <h2>Agregar Docente</h2>
             <br>
-
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" />
-
-            <label for="apellidos">Apellido Paterno</label>
-            <input type="text" name="apellidos" id="apellidos" placeholder="1r Apellido" />
-
-            <label for="apellidos">Apellidos Materno</label>
-            <input type="text" name="apellidos" id="apellidos" placeholder="1r Apellido" />
-
-
-            <label for="apellidos">Agregar Foto</label>
-            <input type="file" accept="image/jpeg" multiple class="foto">
-
-
-            <!-- <label for="lang">Asignar grupo</label>
-
-            <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes()">
-                    <select>
-                        <option>Selecciona una opcion</option>
-                    </select>
-                    <div class="overSelect"></div>
-                </div>
-                <div id="checkboxes" class="hide">
-                    <label for="c1"><input type="checkbox" id="c1" />Primer checkbox</label>
-                    <label for="c1"><input type="checkbox" id="c1" />Primer checkbox</label>
-                    <label for="c1"><input type="checkbox" id="c1" />Primer checkbox</label>
-                   
-                </div>
-            </div> -->
-
-
-
-            <!-- <label for="lang">Asignar Materias</label>
-
-            <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes2()">
-                    <select>
-                        <option>Selecciona una opcion</option>
-                    </select>
-                    <div class="overSelect"></div>
-                </div>
-                <div id="checkboxes" class="hide">
-                    <label for="c1"><input type="checkbox" id="c1" />aaaaaaaaaaaa</label>
-                    <label for="c1"><input type="checkbox" id="c1" />aaaaaaaaa</label>
-                    <label for="c1"><input type="checkbox" id="c1" />Primer checkbox</label>
-                   
-                </div>
-            </div> -->
-
-            <script>
-                function showCheckboxes() {
-                    var checkboxes = document.getElementById("checkboxes");
-                    if (checkboxes.classList.contains("hide")) {
-                        checkboxes.classList.remove("hide");
-                    } else {
-                        checkboxes.classList.add("hide");
-                    }
-                }
-            </script>
-
-            <script>
-                function showCheckboxes2() {
-                    var checkboxes = document.getElementById("checkboxes");
-                    if (checkboxes.classList.contains("hide")) {
-                        checkboxes.classList.remove("hide");
-                    } else {
-                        checkboxes.classList.add("hide");
-                    }
-                }
-            </script>
-
-
-
-
-
-
-
-            <input type="submit" name="enviar" value="enviar datos" />
-        </form>
-
+            <div class="input-group">
+              <label for="nombreInput">Nombre(s):</label>
+              <input type="text" id="nombreInput" placeholder="Nombre">
+            </div>
+            <div class="input-group">
+              <label for="apellidosInput">Apellidos:</label>
+              <input type="text" id="apellidosInput" placeholder="Apellidos">
+            </div>
+            
+            <div class="input-group">
+                <label for="matriculaInput">Numero de control:</label>
+                <input type="text" id="matriculaInput" placeholder="Matrícula">
+            </div>
+            <div class="input-group">
+                <label for="matriculaInput">Foto</label>
+                <input type="file">
+            </div>
+            
+            
+            
+            <button>Aceptar</button>
+          </div>
     </div>
+
+
 
 
 
