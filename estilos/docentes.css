@@ -3,7 +3,15 @@
     flex-direction: row;
     justify-content: center;
     padding: 30px;
-    padding-left: 10px;
+    
+}
+.divh {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+   
+    
 }
 body {
     font-family: Arial, sans-serif;
@@ -18,8 +26,18 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 750px;
+    width: 700px;
     margin: 10px;
+  }
+
+  .cardh {
+    background-color: #e0f7e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 800px;
+    margin: 10px;
+    height: auto;
   }
 
   .card h2 {
@@ -37,7 +55,7 @@ body {
     padding: 8px;
     text-align: left;
     width: 80px;
-    height: 60px;
+    height: 40px;
   }
 
   th {
