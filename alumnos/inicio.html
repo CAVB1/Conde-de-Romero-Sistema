@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="../estilos/historial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Interfaz</title>
+</head>
+
+<body>
+    <div class="navigation-bar">
+        <img src="../imagenes/logo-removebg-preview.png" alt="Imagen de perfil">
+        <a href="../alumnos/inicio.html">Inicio</a>
+        <a href="#" style="margin-left: 80%;">Cerrar Sesión</a>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3>Información del Alumno</h3>
+            <input type="text" placeholder="Matrícula" readonly>
+            <input type="text" placeholder="Nombre" readonly>
+            <input type="text" placeholder="Grupo" readonly>
+            <input type="text" placeholder="Tutor Grupal" readonly>
+        </div>
+        <div class="card">
+            <h3>MATERIAS</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Materia</th>
+                            <th>Promedio</th>
+                            <th>Ver Historial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matemáticas</td>
+                            <td><input type="text" value="90" readonly></td>
+                            <td class="ver-icon"><a href="../alumnos/historial.html"><i class="fas fa-eye"></td>
+                        </tr>
+                        <tr>
+                            <td>Ciencias</td>
+                            <td><input type="text" value="85" readonly></td>
+                            <td class="ver-icon"><a href="../alumnos/historial.html"><i class="fas fa-eye"></td>
+                            </td>
+                        </tr>
+                        <!-- Repite este bloque para más materias -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
