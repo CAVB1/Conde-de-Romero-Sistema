@@ -2,7 +2,7 @@
 
 class Docentes{
     
-    public static function InssertDocente($no_control, $nombre, $apellido_p,$apellido_m,$passwd,$foto){
+    public static function InsertDocente($no_control, $nombre, $apellido_p,$apellido_m,$passwd,$foto){
         include_once 'db_connection.php';
         $sql="INSERT INTO docentes(no_control, nombre, apellido_p, apellido_m, passwd, foto)
         VALUES($no_control, '$nombre', '$apellido_p','$apellido_m', '$passwd',$foto)";
@@ -34,6 +34,10 @@ class Docentes{
         include_once 'db_connection.php';
         $sql="DELETE FROM docentes WHERE no_control=$no_control;";
         return $conexion->query($sql);
+    }
+
+    public static function getMateriasDocente($no_control){
+        $sql="SELECT materias.* ";
     }
 }
 ?>
