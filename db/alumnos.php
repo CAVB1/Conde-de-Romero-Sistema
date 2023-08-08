@@ -7,6 +7,24 @@ class Alumnos{
         return $conexion->query($sql);
     }
 
+    public static function autenticateAlumno($matricula,$pass){
+        include_once 'db_connection.php';
+        $stmsql="SELECT * FROM alumnos WHERE matricula=? AND passwd=?;";
+        
+        $sql=$conexion->prepare($stmsql);
+
+        $sql->bind_param('ss',$matricula,$pass);
+        $sql->execute();
+
+        $result=$sql->get_result();
+
+        if($result->num_rows>0){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+
     public static function getAllAlumnos(){
         consultaSQL("SELECT * FROM alumnos");
     }
