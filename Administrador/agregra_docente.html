@@ -44,32 +44,45 @@
             <br>
             <div class="input-group">
               <label for="nombreInput">Nombre(s):</label>
-              <input type="text" id="nombreInput" placeholder="Nombre">
+              <input type="text" id="nombreInput" placeholder="Nombre" required>
             </div>
             <div class="input-group">
-              <label for="apellidosInput">Apellidos:</label>
-              <input type="text" id="apellidosInput" placeholder="Apellidos">
+              <label for="apellidopInput">Apellido paterno:</label>
+              <input type="text" id="apellidopInput" placeholder="Apellido paterno" required>
+            </div>
+            <div class="input-group">
+              <label for="apellidomInput">Apellido materno:</label>
+              <input type="text" id="apellidomInput" placeholder="Apellido materno" required>
             </div>
             
             <div class="input-group">
                 <label for="matriculaInput">Numero de control:</label>
-                <input type="text" id="matriculaInput" placeholder="Matrícula">
+                <input type="text" id="matriculaInput" placeholder="Número de control" required>
             </div>
             <div class="input-group">
-                <label for="matriculaInput">Foto</label>
-                <input type="file">
+                <label for="passInput">Contraseña:</label>
+                <input type="password" id="passInput" placeholder="Contraseña" required>
+            </div>
+            <div class="input-group">
+                <label for="pass2Input">Confirme la contraseña: </label>
+                <input type="password" id="pass2Input" placeholder="Contraseña" required>
+            </div>
+            <div class="input-group">
+                <label for="fotoInput">Foto</label>
+                <input type="file" onchange="cargarFoto(event)" id="fotoInput" accept="image/*">
+                <input type="hidden" id="foto64">
             </div>
             
             
             
-            <button>Aceptar</button>
+            <button id="btnSend">Aceptar</button>
           </div>
     </div>
 
 
 
 
-
+<script src="./javascript/agregar_docente.js"></script>
 
 
 </body>
