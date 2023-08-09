@@ -1,4 +1,5 @@
 <?php
+include_once 'quey.php';
 class Alumnos{
     public static function InsertAlumno($matricula, $passwd, $nombre, $apellido_p,$apellido_m,$nivel,$grado, $id_grupo){
         include_once 'db_connection.php';
@@ -8,21 +9,23 @@ class Alumnos{
     }
 
     public static function autenticateAlumno($matricula,$pass){
-        include_once 'db_connection.php';
+        require 'db_connection.php';
+        
         $stmsql="SELECT * FROM alumnos WHERE matricula=? AND passwd=?;";
         
+        // $sql=$conexion->prepare($stmsql);
         $sql=$conexion->prepare($stmsql);
-
-        $sql->bind_param('ss',$matricula,$pass);
-        $sql->execute();
-
-        $result=$sql->get_result();
-
-        if($result->num_rows>0){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
+    
+            $sql->bind_param('ss',$user,$passwd);
+            $sql->execute();
+    
+            $result=$sql->get_result();
+    
+            if($result->num_rows>0){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
     }
 
     public static function getAllAlumnos(){

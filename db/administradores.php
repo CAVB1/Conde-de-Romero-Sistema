@@ -1,7 +1,8 @@
 <?php
+include_once 'quey.php';
     class Administradores{
         public static function validateAdministrador($user, $passwd){
-            include_once 'db_connection.php';
+            require 'db_connection.php';
             $stmsql="SELECT * FROM administrador WHERE user=? AND passw=?;";
         
             $sql=$conexion->prepare($stmsql);

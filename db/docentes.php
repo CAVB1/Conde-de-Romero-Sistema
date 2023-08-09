@@ -12,12 +12,12 @@ class Docentes{
     }
 
     public static function validateDocente($no_control,$passwd){
-        include_once 'db_connection.php';
+        require 'db_connection.php';
         $stmsql="SELECT * FROM docentes WHERE no_control=? AND passwd=?;";
         
         $sql=$conexion->prepare($stmsql);
-
-        $sql->bind_param('ss',$no_control,$pass);
+        
+        $sql->bind_param('ss',$no_control,$passwd);
         $sql->execute();
 
         $result=$sql->get_result();
