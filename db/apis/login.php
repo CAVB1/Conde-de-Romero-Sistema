@@ -10,13 +10,13 @@ if (isset($_POST['usuario']) && isset($_POST['contra'])) {
     if (Administradores::validateAdministrador($user, $pass)) {
         header('Location: ../../Administrador/docentes.html');
         exit();
-    } elseif (Alumnos::autenticateAlumno($user, $pass)) {
-        header('Location: ../../alumnos/inicio.html');
-        exit();
     } elseif (Docentes::validateDocente($user, $pass)) {
         header('Location: ../../docentes/materias.html');
         exit();
-    }
+    } elseif (Alumnos::autenticateAlumno($user, $pass)) {
+        header('Location: ../../alumnos/inicio.html');
+        exit();
+    } 
 
 
 }else{
