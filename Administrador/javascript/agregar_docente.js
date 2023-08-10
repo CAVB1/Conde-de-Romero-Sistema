@@ -12,7 +12,7 @@ const btn = document.getElementById("btnSend");
 btn.addEventListener("click", function () {
    
     if (nombreI.value.trim() !== "" && apellidopI.value.trim() !== "" && apellidomI.value.trim() !== "" && ncontrolI.value.trim() !== "" && contraI.value.trim() !== "" && contra2I.value.trim() !== ""&&foto64.value!=="") {
-        if (contraI.value !== contra2I) {
+        if (contraI.value !== contra2I.value) {
             alert("Lascontraseñas no coinciden");
             contra2I.value="";
             contra2I.focus();
