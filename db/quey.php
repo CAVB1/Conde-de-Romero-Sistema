@@ -1,6 +1,6 @@
 <?php
 function consultaSQL($sql) {
-    include "db_connection.php";
+    require "db_connection.php";
 
     $conn = $conexion;
 

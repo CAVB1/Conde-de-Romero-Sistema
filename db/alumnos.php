@@ -1,10 +1,31 @@
 <?php
+include_once 'quey.php';
 class Alumnos{
     public static function InsertAlumno($matricula, $passwd, $nombre, $apellido_p,$apellido_m,$nivel,$grado, $id_grupo){
         include_once 'db_connection.php';
         $sql="INSERT INTO docentes(matricula, passwd, nombre, apellido_p, apellido_m,nivel_escolar, grado_escolar,fk_id_grupo)
         VALUES($matricula, '$passwd','$nombre', '$apellido_p','$apellido_m', '$nivel','$grado',$id_grupo)";
         return $conexion->query($sql);
+    }
+
+    public static function autenticateAlumno($matricula,$pass){
+        require 'db_connection.php';
+        
+        $stmsql="SELECT * FROM alumnos WHERE matricula=? AND passwd=?;";
+        
+        // $sql=$conexion->prepare($stmsql);
+        $sql=$conexion->prepare($stmsql);
+    
+            $sql->bind_param('ss',$user,$passwd);
+            $sql->execute();
+    
+            $result=$sql->get_result();
+    
+            if($result->num_rows>0){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
     }
 
     public static function getAllAlumnos(){
