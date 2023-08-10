@@ -95,6 +95,7 @@ body {
   th, td {
     padding: 10px;
     text-align: center;
+    border: 1px solid rgb(0, 0, 0);
   }
 
   th {
@@ -104,6 +105,14 @@ body {
 
   th:last-child {
     background-color: #2c682c; /* Cambia el color del encabezado de Calificación Final */
+  }
+
+  input[type="number"] {
+    width: 100px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
   }
 
   .ver-icon {
