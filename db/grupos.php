@@ -1,9 +1,9 @@
 <?php
 include_once 'quey.php';
 class Grupos{
-    public static function InsertGrupo($nombre_grupo){
-        $sql="INSERT INTO grupos(nombre_grupo)
-        VALUES('$nombre_grupo')";
+    public static function InsertGrupo($nombre_grupo,$nivel,$grado,$tutor){
+        $sql="INSERT INTO grupos(nombre_grupo,nivel,grado,tutor)
+        VALUES('$nombre_grupo','$nivel','$grado',$tutor)";
         include_once 'db_connection.php';
 
         return $conexion->query($sql);
