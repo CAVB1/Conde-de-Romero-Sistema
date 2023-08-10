@@ -1,3 +1,7 @@
+body{
+  background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
+  background-size: cover;
+}
 .div1 {
     display: flex;
     flex-direction: column;

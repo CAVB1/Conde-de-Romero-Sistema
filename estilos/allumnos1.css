@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  
+    background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
+    background-size: cover;
+    
+    /* Ruta de la imagen de fondo */
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    
+      background-image: url('https://i.pinimg.com/564x/63/9e/85/639e851756130dbee9e84427115e1555.jpg');
+      background-size: cover;
+     
+      
+      /* Ruta de la imagen de fondo */
+    }
+}
+  

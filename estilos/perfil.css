@@ -1,5 +1,8 @@
 body{
     background-color: #ddd;
+    
+      background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
+    
   }
   .container{
     margin: 0 auto;

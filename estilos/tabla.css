@@ -1,3 +1,7 @@
+body{
+  background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
+  background-size: cover;
+}
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
