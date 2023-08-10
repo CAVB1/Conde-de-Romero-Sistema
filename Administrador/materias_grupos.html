@@ -55,14 +55,14 @@
                 <label for="nivelSelect">Nivel escolar:</label>
                 <select id="nivelSelect">
                     <option value="" disabled selected>Seleccionar nivel</option>
-                    <option value="preescolar">Preescolar</option>
-                    <option value="primaria">Primaria</option>
-                    <option value="secundaria">Secundaria</option>
+                    <option value="Preescolar">Preescolar</option>
+                    <option value="Primaria">Primaria</option>
+                    <option value="Secundaria">Secundaria</option>
                 </select>
             </div>
             <div class="input-group">
                 <label for="gradoSelect">Grado:</label>
-                <select id="gradoSelect">
+                <select id="gradoSelect" disabled>
                     <option value="" disabled selected>Seleccionar grado</option>
                     <option value="grado1">Grado 1</option>
                     <option value="grado2">Grado 2</option>
@@ -73,12 +73,10 @@
                 <label for="tutorSelect">Tutor:</label>
                 <select id="tutorSelect">
                     <option value="" disabled selected>Seleccionar tutor</option>
-                    <option value="tutor1">Tutor 1</option>
-                    <option value="tutor2">Tutor 2</option>
-                    <option value="tutor3">Tutor 3</option>
+                   
                 </select>
             </div>
-            <button>Aceptar</button>
+            <button id="btnGrupo">Aceptar</button>
         </div>
 
         <div class="card">
@@ -92,21 +90,17 @@
                 <label for="docenteSelect">Docente:</label>
                 <select id="docenteSelect">
                     <option value="" disabled selected>Seleccionar docente</option>
-                    <option value="docente1">Docente 1</option>
-                    <option value="docente2">Docente 2</option>
-                    <option value="docente3">Docente 3</option>
+                    
                 </select>
             </div>
             <div class="input-group">
                 <label for="grupoMateriaSelect">Grupo:</label>
                 <select id="grupoMateriaSelect">
                     <option value="" disabled selected>Seleccionar grupo</option>
-                    <option value="grupo1">Grupo 1</option>
-                    <option value="grupo2">Grupo 2</option>
-                    <option value="grupo3">Grupo 3</option>
+                    
                 </select>
             </div>
-            <button>Aceptar</button>
+            <button id="btnMateria">Aceptar</button>
         </div>
 
 
@@ -126,6 +120,7 @@
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="../../estilos/script.js"></script>
     <script src="../../estilos/script2.js"></script>
+    <script src="./javascript/materias_grupos.js"></script>
 </body>
 
 </html>
