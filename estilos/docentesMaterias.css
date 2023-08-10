@@ -55,3 +55,14 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+
+
+label{
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  
+  line-height: 1.2;
+  color: #00394f;
+
+}

@@ -59,12 +59,31 @@ body{
   }
   label {
     cursor: default;
+    font-family: "Handlee", cursive;
+  font-weight: bold;
+  
+  line-height: 1.2;
+  color: #00394f;
+  }
+
+  .h2 {
+    font-family: "Handlee", cursive;
+  font-weight: bold;
+  
+  line-height: 1.2;
+  color: #00394f;
+
   }
   label {
     display: inline-block;
     max-width: 80%;
     margin-bottom: 5px;
     font-weight: 700;
+    font-family: "Handlee", cursive;
+  font-weight: bold;
+  
+  line-height: 1.2;
+  color: #00394f;
   }
   .usuername{
       font-size: 21px;
@@ -158,3 +177,4 @@ body{
   padding-left: 70px;
 
 }
+
