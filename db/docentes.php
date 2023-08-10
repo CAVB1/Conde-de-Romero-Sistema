@@ -5,7 +5,7 @@ class Docentes{
     public static function InsertDocente($no_control, $nombre, $apellido_p,$apellido_m,$passwd,$foto){
         include_once 'db_connection.php';
         $sql="INSERT INTO docentes(no_control, nombre, apellido_p, apellido_m, passwd, foto)
-        VALUES($no_control, '$nombre', '$apellido_p','$apellido_m', '$passwd',$foto)";
+        VALUES($no_control, '$nombre', '$apellido_p','$apellido_m', '$passwd','$foto')";
         return $conexion->query($sql);
 
 
@@ -59,7 +59,12 @@ class Docentes{
     }
 
     public static function getGrupoTutorado($id){
-        return consultaSQL("SELECT * FROM grupos WHERE tutor=$id")[0];
+        $res=consultaSQL("SELECT * FROM grupos WHERE tutor=$id");
+        if(count($res)>0){
+            return $res[0];
+        }else{
+            return "";
+        }
     }
 }
 ?>
