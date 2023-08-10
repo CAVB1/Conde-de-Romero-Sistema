@@ -19,10 +19,26 @@ btn.addEventListener("click", function () {
             return;
         }
 
-        fetch()
-        .then()
-        .then()
-        .catch();
+        let formData=new FormData();
+        formData.append('nocontrol',ncontrolI.value);
+        formData.append('nombre',nombreI.value);
+        formData.append('apellidop',apellidopI.value);
+        formData.append('apellidom',apellidomI.value);
+        formData.append('passwd',contraI.value);
+        formData.append('foto',foto64I);
+
+        fetch('../db/apis/agregar_docente.php',{
+          method:'POST',
+          body: formData
+
+        })
+        .then(response=>response.json())
+        .then(data=>{
+          
+        })
+        .catch(error=>{
+
+        });
 
     }
 });

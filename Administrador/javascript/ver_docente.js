@@ -30,10 +30,10 @@ document.body.onload = function () {
 
             console.log('foto: '+datos.foto);
             if(datos.foto!==''){
-                const imagenBase64 = btoa(String.fromCharCode(...new Uint8Array(datos.foto)));
+                const base64String = datos.foto;
 
             // Construye la fuente de la imagen en formato data URI
-            const imagenSrc = `data:image/jpeg;base64,${imagenBase64}`;
+            const imagenSrc = `data:image/jpeg;base64,${base64String}`;
 
             photo.src=imagenSrc;
             }

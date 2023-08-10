@@ -1,5 +1,5 @@
 <?php
-require '../Docente.php';
+require '../docentes.php';
 if (isset($_POST['nocontrol']) && isset($_POST['nombre']) && isset($_POST['apellidop']) && isset($_POST['apellidom']) && isset($_POST['passwd']) && isset($_POST['foto'])) {
     $nocontrol = $_POST['nocontrol'];
     $nombre = $_POST['nombre'];
@@ -13,7 +13,7 @@ if (isset($_POST['nocontrol']) && isset($_POST['nombre']) && isset($_POST['apell
         header("Content-Type: application/json", null, 200);
         echo json_encode(array('message' => 'Registro exitoso'));
     } else {
-        header("Content-Type: application/json", null, 500);
+        header("Content-Type: application/json", null, 400);
         echo json_encode(array('message' => 'Datos erroneos'));
     }
 
