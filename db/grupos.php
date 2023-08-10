@@ -1,5 +1,5 @@
 <?php
-
+include_once 'quey.php';
 class Grupos{
     public static function InsertGrupo($nombre_grupo){
         $sql="INSERT INTO grupos(nombre_grupo)
@@ -12,6 +12,10 @@ class Grupos{
 
     public static function getAllGrupos(){
         return consultaSQL("SELECT * FROM grupos");
+    }
+
+    public static function getAllFormatedGrupos(){
+        return consultaSQL("SELECT id_grupo, concat(grado,'° ',nombre_grupo,' (',nivel,')') as nombre, grupos.tutor FROM grupos;");
     }
 
     public static function getGrupo($id){
