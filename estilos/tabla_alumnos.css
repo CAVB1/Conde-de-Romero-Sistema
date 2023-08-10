@@ -1,5 +1,9 @@
 body{
     width: 100%;
+    
+      background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
+      background-size: cover;
+  
 }
 html{
     width: 100%;
