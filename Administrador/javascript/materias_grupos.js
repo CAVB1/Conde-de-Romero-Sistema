@@ -113,7 +113,7 @@ document.body.onload=function(){
             body.append("docente",docente);
             body.append("grupo", grupo);
 
-            fetch("",{
+            fetch("../db/apis/agregar_materia.php",{
                 method:'POST',
                 body:body
             })
