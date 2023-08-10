@@ -34,7 +34,8 @@ btn.addEventListener("click", function () {
         })
         .then(response=>response.json())
         .then(data=>{
-          
+          alert("Registro completado");
+          setTimeout(function(){window.location.href="agregra_docente.html"},200)
         })
         .catch(error=>{
 
