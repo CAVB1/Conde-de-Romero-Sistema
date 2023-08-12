@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../estilos/barra1.css">
   <link rel="stylesheet" href="../estilos/tabla_alumnos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/vfs_fonts.js"></script>
+
 
   
 </head>
@@ -116,6 +120,12 @@
 
 
       </div>
+
+      <div class="card">
+        <button class="accept-button" id="descargar-pdf">Descargar PDF</button>
+      </div>
+        
+      </di>
       
     </div>
 
@@ -123,6 +133,41 @@
 
 
 </body>
+
+<script>
+  document.getElementById("descargar-pdf").addEventListener("click", function() {
+    var docDefinition = {
+      content: [
+        { text: "Tabla de Calificaciones", style: "header" },
+        {
+          table: {
+            headerRows: 1,
+            body: [
+              ["Matricula", "Nombre", "Parcial 1", "Parcial 2", "Parcial 3", "Promedio Final"],
+              // ... Aquí agrega las filas de datos de la tabla ...
+            ]
+          }
+        }
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 0, 0, 10]
+        },
+        tableHeader: {
+        fillColor: "#4caf50", // Cambia el color de fondo del encabezado
+        color: "#ffffff", // Cambia el color del texto del encabezado
+        bold: true,
+        alignment: "center"
+      }
+
+      }
+    };
+  
+    pdfMake.createPdf(docDefinition).download("tabla_calificaciones.pdf");
+  });
+  </script>
 
 
 <script>
