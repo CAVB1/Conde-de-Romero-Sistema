@@ -18,5 +18,9 @@ include_once 'quey.php';
                 return FALSE;
             }
         }
+
+        public static function getAdminByUser($user){
+            return consultaSQL("SELECT * FROM administrador where user='$user'");
+        }
     }
 ?>

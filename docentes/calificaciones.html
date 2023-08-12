@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.4/vfs_fonts.js"></script>
 
 
-  
+
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 
 
     <a class="logout" href="../db/apis/logout.php">
-      
+
       <i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
       Cerrar Sesión
     </a>
@@ -64,7 +64,7 @@
       <div class="card2">
 
         <table id="tabla-calificaciones">
-          
+
           <thead>
             <tr>
               <th>Matricula</th>
@@ -113,7 +113,7 @@
                 <input type="number" id="promedio_final" readonly>
               </td>
             </tr>
-            
+
             <!-- Repite este bloque para más registros -->
           </tbody>
         </table>
@@ -173,8 +173,26 @@
 <script>
   function agregarCampo() {
     var inputContainers = document.querySelectorAll('.input-container');
+    
+
+    let cont=0;
+    for( let i=0;i<inputContainers.length;i++){
+      let currentCont=inputContainers[i];
+      var valor = currentCont.querySelector('input[type="number"]').value;
+      cont+=parseInt(valor);
+    }
+    if (cont>100){
+      return;
+    }
+    console.log(cont)
     var newInputContainer = inputContainers[0].cloneNode(true);
-    var inputs = newInputContainer.querySelectorAll('input');
+    var inputs = inputContainers[0].querySelectorAll('input');
+    var newinputs = newInputContainer.querySelectorAll('input');
+
+    if(newinputs[0].value.trim()===""||newinputs[1].value<0||newinputs[1].value==""){
+        return;
+    }
+
     inputs.forEach(input => input.value = '');
     inputContainers[inputContainers.length - 1].parentNode.appendChild(newInputContainer);
     newInputContainer.querySelector('.remove-button').style.display = 'block';
@@ -182,12 +200,49 @@
 
   function guardarRubros() {
     var rubros = document.querySelectorAll('.input-container');
-    rubros.forEach(rubro => {
+    let cont=0;
+    for (var i = 1; i < rubros.length; i++) {
+      var rubro = rubros[i];
+      
+      var valor = parseInt (rubro.querySelector('input[type="number"]').value);
+      cont+=valor;
+      
+    }
+    if (cont!==100){
+      return
+    }
+    for (var i = 1; i < rubros.length; i++) {
+      const urlSearchParams = new URLSearchParams(window.location.search);
+    const id_materia = urlSearchParams.get("id_materia");
+
+      var rubro = rubros[i];
       var nombre = rubro.querySelector('input[type="text"]').value;
       var valor = rubro.querySelector('input[type="number"]').value;
-      console.log("Nombre del rubro:", nombre);
-      console.log("Valor del rubro:", valor);
-    });
+      
+      for(let j=1;j<4;j++){
+        let body=new FormData();
+        body.append("nombre_rubro",nombre);
+        body.append("id_materia",id_materia);
+        body.append("valor",valor);
+        body.append("bloque",j);
+
+        fetch('../db/apis/agregar_rubros.php',{
+          method:'POST',
+          body:body
+        })
+        .then(response=>response.json())
+        .then(data=>{
+
+        })
+        .catch(error=>{
+
+        });
+      }
+
+      setTimeout(function(){window.location.href="calificaciones.html"},1000);
+      
+      
+    }
   }
 
   function borrarRubro(button) {
@@ -196,10 +251,10 @@
   }
 
 
-  
 
- 
-  
+
+
+
 </script>
 
 </body>

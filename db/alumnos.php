@@ -37,7 +37,7 @@ class Alumnos{
     }
 
     public static function getAlumno($matricula){
-        consultaSQL("SELECT * FROM alumnos WHERE matricula=$matricula");
+        return consultaSQL("SELECT * FROM alumnos WHERE matricula=$matricula");
     }
     public static function deleteAlumno($matricula){
         consultaSQL("SELECT * FROM alumnos WHERE matricula=$matricula");
