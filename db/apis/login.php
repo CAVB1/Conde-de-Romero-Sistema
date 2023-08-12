@@ -9,6 +9,8 @@ if (isset($_POST['usuario']) && isset($_POST['contra'])) {
 
     if (Administradores::validateAdministrador($user, $pass)) {
         session_start();
+        $data=Administradores::getAdminByUser($user);
+        $_SESSION['id']=$data[0]['id_admin'];
         $_SESSION['username'] = $user;
         $_SESSION['nivel'] = 1;
         header('Location: ../../Administrador/docentes.html');
@@ -16,12 +18,16 @@ if (isset($_POST['usuario']) && isset($_POST['contra'])) {
     } elseif (Docentes::validateDocente($user, $pass)) {
 
         session_start();
+        $data=Docentes::getDocente($user);
+        $_SESSION['id']=$data[0]['id_docente'];
         $_SESSION['username'] = $user;
         $_SESSION['nivel'] = 2;
         header('Location: ../../docentes/materias.html');
         exit();
     } elseif (Alumnos::autenticateAlumno($user, $pass)) {
         session_start();
+        $data=Alumnos::getAlumno($user);
+        $_SESSION['id']=$data[0]['id_alumnos'];
         $_SESSION['username'] = $user;
         $_SESSION['nivel'] = 3;
         header('Location: ../../alumnos/inicio.html');
