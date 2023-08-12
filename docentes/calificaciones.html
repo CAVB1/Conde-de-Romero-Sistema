@@ -167,11 +167,36 @@
       return
     }
     for (var i = 1; i < rubros.length; i++) {
+      const urlSearchParams = new URLSearchParams(window.location.search);
+    const id_materia = urlSearchParams.get("id_materia");
+
       var rubro = rubros[i];
       var nombre = rubro.querySelector('input[type="text"]').value;
       var valor = rubro.querySelector('input[type="number"]').value;
-      console.log("Nombre del rubro:", nombre);
-      console.log("Valor del rubro:", valor);
+      
+      for(let j=1;j<4;j++){
+        let body=new FormData();
+        body.append("nombre_rubro",nombre);
+        body.append("id_materia",id_materia);
+        body.append("valor",valor);
+        body.append("bloque",j);
+
+        fetch('../db/apis/agregar_rubros.php',{
+          method:'POST',
+          body:body
+        })
+        .then(response=>response.json())
+        .then(data=>{
+
+        })
+        .catch(error=>{
+
+        });
+      }
+
+      setTimeout(function(){window.location.href="calificaciones.html"},1000);
+      
+      
     }
   }
 
