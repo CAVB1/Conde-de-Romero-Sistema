@@ -23,7 +23,7 @@ if (isset($_POST['usuario']) && isset($_POST['contra'])) {
     } elseif (Alumnos::autenticateAlumno($user, $pass)) {
         session_start();
         $_SESSION['username'] = $user;
-        $_SESSION['nivel'] = 2;
+        $_SESSION['nivel'] = 3;
         header('Location: ../../alumnos/inicio.html');
         exit();
     } else {

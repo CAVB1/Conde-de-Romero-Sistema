@@ -58,6 +58,10 @@ class Docentes{
         return consultaSQL("SELECT materias.*, docentes.id_docente, CONCAT(grupos.grado,'° ',grupos.nombre_grupo,' (',grupos.nivel,')') as Grupo from materias join docentes on materias.fk_id_docente=docentes.id_docente JOIN grupos on grupos.id_grupo=materias.fk_id_grupo where docentes.id_docente=$no_control");
     }
 
+    public static function getGruposDocente($id){
+        
+    }
+
     public static function getGrupoTutorado($id){
         $res=consultaSQL("SELECT * FROM grupos WHERE tutor=$id");
         if(count($res)>0){
