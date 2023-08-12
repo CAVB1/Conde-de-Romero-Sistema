@@ -16,7 +16,7 @@ class Alumnos{
         // $sql=$conexion->prepare($stmsql);
         $sql=$conexion->prepare($stmsql);
     
-            $sql->bind_param('ss',$user,$passwd);
+            $sql->bind_param('ss',$matricula,$pass);
             $sql->execute();
     
             $result=$sql->get_result();
