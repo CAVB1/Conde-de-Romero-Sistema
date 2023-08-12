@@ -6,7 +6,7 @@
     <title>Docentes</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="../estilos/barra.css">
-    <link rel="stylesheet" href="../estilos/tabla.css">
+   
     <link rel="stylesheet" href="../estilos/boton.css">
     <link rel="stylesheet" href="../estilos/materias.css">
     <link rel="stylesheet" href="../estilos/barra1.css">
@@ -44,69 +44,104 @@
             Cerrar Sesión
           </a>
     </div>
+    <div class="div2">
+        <div class="div1">
+            <div class="card">
+                <h2>Agregar grupo</h2>
+                <br>
+                <div class="input-group">
+                    <label for="nombreGrupo">Nombre del grupo:</label>
+                    <input type="text" id="nombreGrupo" placeholder="Nombre del grupo">
+                </div>
+                <div class="input-group">
+                    <label for="nivelSelect">Nivel escolar:</label>
+                    <select id="nivelSelect">
+                        <option value="" disabled selected>Seleccionar nivel</option>
+                        <option value="Preescolar">Preescolar</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="gradoSelect">Grado:</label>
+                    <select id="gradoSelect" disabled>
+                        <option value="" disabled selected>Seleccionar grado</option>
+                        <option value="grado1">Grado 1</option>
+                        <option value="grado2">Grado 2</option>
+                        <option value="grado3">Grado 3</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="tutorSelect">Tutor:</label>
+                    <select id="tutorSelect">
+                        <option value="" disabled selected>Seleccionar tutor</option>
+                    
+                    </select>
+                </div>
+                <button id="btnGrupo">Aceptar</button>
+            </div>
 
-    <div class="div1">
-        <div class="card">
-            <h2>Agregar grupo</h2>
+            <div class="card">
+                <h2>Agregar materia</h2>
+                <br>
+                <div class="input-group">
+                    <label for="nombreMateria">Nombre de la materia:</label>
+                    <input type="text" id="nombreMateria" placeholder="Nombre de la materia">
+                </div>
+                <div class="input-group">
+                    <label for="docenteSelect">Docente:</label>
+                    <select id="docenteSelect">
+                        <option value="" disabled selected>Seleccionar docente</option>
+                        
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="grupoMateriaSelect">Grupo:</label>
+                    <select id="grupoMateriaSelect">
+                        <option value="" disabled selected>Seleccionar grupo</option>
+                        
+                    </select>
+                </div>
+                <button id="btnMateria">Aceptar</button>
+            </div>
             <br>
-            <div class="input-group">
-                <label for="nombreGrupo">Nombre del grupo:</label>
-                <input type="text" id="nombreGrupo" placeholder="Nombre del grupo">
-            </div>
-            <div class="input-group">
-                <label for="nivelSelect">Nivel escolar:</label>
-                <select id="nivelSelect">
-                    <option value="" disabled selected>Seleccionar nivel</option>
-                    <option value="Preescolar">Preescolar</option>
-                    <option value="Primaria">Primaria</option>
-                    <option value="Secundaria">Secundaria</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="gradoSelect">Grado:</label>
-                <select id="gradoSelect" disabled>
-                    <option value="" disabled selected>Seleccionar grado</option>
-                    <option value="grado1">Grado 1</option>
-                    <option value="grado2">Grado 2</option>
-                    <option value="grado3">Grado 3</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="tutorSelect">Tutor:</label>
-                <select id="tutorSelect">
-                    <option value="" disabled selected>Seleccionar tutor</option>
-                   
-                </select>
-            </div>
-            <button id="btnGrupo">Aceptar</button>
+
+            
+
+
         </div>
 
-        <div class="card">
-            <h2>Agregar materia</h2>
-            <br>
-            <div class="input-group">
-                <label for="nombreMateria">Nombre de la materia:</label>
-                <input type="text" id="nombreMateria" placeholder="Nombre de la materia">
-            </div>
-            <div class="input-group">
-                <label for="docenteSelect">Docente:</label>
-                <select id="docenteSelect">
-                    <option value="" disabled selected>Seleccionar docente</option>
-                    
-                </select>
-            </div>
-            <div class="input-group">
-                <label for="grupoMateriaSelect">Grupo:</label>
-                <select id="grupoMateriaSelect">
-                    <option value="" disabled selected>Seleccionar grupo</option>
-                    
-                </select>
-            </div>
-            <button id="btnMateria">Aceptar</button>
-        </div>
+        <div class="card3">
+            <table>
+                <thead>
+                <tr>
+                    <th>Grupos</th>
+                    <th>Nivel escolar</th>
+                    <th>Materias asignadas</th>
+                    <th>Tutor grupal</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Grupo A</td>
+                    <td>Secundaria</td>
 
+                    <td>Matemáticas, Historia</td>
+                    <td>Juan Pérez</td>
+                </tr>
+                <tr>
+                    <td>Grupo B</td>
+                    <td>Secundaria</td>
+                    <td>Ciencias, Literatura</td>
+                    <td>María Gómez</td>
+                </tr>
+                <!-- Repite este bloque para más registros -->
+                </tbody>
+            </table>
+        </div>
 
     </div>
+    
 
 
 
