@@ -1,60 +1,136 @@
-body{
+body {
   background-image: url('../imagenes/pexels-olia-danilevich-5088017.jpg');
 }
+
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  padding-left: 150px;
+}
+
 .div1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 30px;
-    padding-left: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 30px;
+  padding-left: 150px;
+}
+
+.div5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  padding-left: 150px;
 }
 
 
 
 
 .card {
-    background-color: #e0f7e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    margin: 20px;
-    text-align: center;
+  background-color: #e0f7e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+.card6 {
+  background-color: #e0f7e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  padding-right: 40px;
+}
+
+
+
+.card3 {
+  background-color: #e0f7e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: auto;
+  margin: 20px;
+  text-align: center;
+  margin-left: 120px;
 }
 
 .card2 {
-    background-color: #e0f7e0;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    height: 250px;
-    margin: 20px;
-    text-align: center;
-    
+  background-color: #e0f7e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  height: 250px;
+  margin: 20px;
+  text-align: center;
+
 }
 
 .input-group {
-    margin: 10px 0;
-    text-align: left;
-  }
+  margin: 10px 0;
+  text-align: left;
+}
 
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
 
-  select, input[type="file"], input[type="text"], input[type="password"], button {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 5px;
-  }
+select,
+input[type="file"],
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
 
-  button {
-    background-color: #4caf50;
-    color: white;
-    cursor: pointer;
-  }
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: auto;
+  background-color: #c7e6c7;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.ver-icon {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ver-icon:hover {
+  color: #2c682c;
+}
