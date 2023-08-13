@@ -2,84 +2,134 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Docente</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'> 
-    <link rel="stylesheet" href="../estilos/barra1.css">
-    <link rel="stylesheet" href="../estilos/agregar_docente.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Docente</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="../estilos/barra1.css">
+  <link rel="stylesheet" href="../estilos/agregar_docente.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
   <script src="./javascript/check_login.js"></script>
-    <div class="sidebar">
-      <a href="../Administrador/docentes.html">
-        <i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Docentes -->
-        Docentes
-      </a>
-  
-      <a href="../Administrador/materias_grupos.html">
-        <i class="fas fa-users-cog"></i> <!-- Icono de Grupos y Materias -->
-        Gruos y Materias
-      </a>
-      <a href="../Administrador/alumnos.html">
-        <i class="fas fa-user"></i> <!-- Icono de Alumnos -->
-        Alumnos
-      </a>
+  <div class="sidebar">
+    <a href="../Administrador/docentes.html">
+      <i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Docentes -->
+      Docentes
+    </a>
+
+    <a href="../Administrador/materias_grupos.html">
+      <i class="fas fa-users-cog"></i> <!-- Icono de Grupos y Materias -->
+      Gruos y Materias
+    </a>
+    <a href="../Administrador/alumnos.html">
+      <i class="fas fa-user"></i> <!-- Icono de Alumnos -->
+      Alumnos
+    </a>
+
+    <a class="logout" href="../db/apis/logout.php">
+      <i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
+      Cerrar Sesión
+    </a>
+  </div>
+
+  <div class="div1">
+    <div class="card">
+      <h2>Agregar Docente</h2>
+      <br>
+      <div class="input-group">
+        <label for="nombreInput">Nombre(s):</label>
+        <input type="text" id="nombreInput" placeholder="Nombre" required>
+      </div>
+      <div class="input-group">
+        <label for="apellidopInput">Apellido paterno:</label>
+        <input type="text" id="apellidopInput" placeholder="Apellido paterno" required>
+      </div>
+      <div class="input-group">
+        <label for="apellidomInput">Apellido materno:</label>
+        <input type="text" id="apellidomInput" placeholder="Apellido materno" required>
+      </div>
+
+      <div class="input-group">
+        <label for="matriculaInput">Numero de control:</label>
+        <input type="text" id="matriculaInput" placeholder="Número de control" required>
+      </div>
+      <div class="input-group">
+        <label for="passInput">Contraseña:</label>
+        <input type="password" id="passInput" placeholder="Contraseña" required>
+        <div class="input-group-append">
+          <button id="show_password" class="boton" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="pass2Input">Confirme la contraseña: </label>
+        <input type="password" id="pass2Input" placeholder="Contraseña" required>
+        <div class="input-group-append">
+          <button id="show_password2" class="boton" type="button" onclick="mostrarPassword2()"> <span class="fa fa-eye-slash icon"></span> </button>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="fotoInput">Foto</label>
+        <input type="file" onchange="cargarFoto(event)" id="fotoInput" accept="image/*">
+        <input type="hidden" id="foto64">
+      </div>
+
+
+
+      <button id="btnSend">Aceptar</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="./javascript/agregar_docente.js"></script>
+
+  <script type="text/javascript">
+    function mostrarPassword(){
+        var cambio = document.getElementById("passInput");
+        if(cambio.type == "password"){
+          cambio.type = "text";
+          $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        }else{
+          cambio.type = "password";
+          $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+      } 
+      
+      $(document).ready(function () {
+      //CheckBox mostrar contraseña
+      $('#ShowPassword').click(function () {
+        $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+      });
+    });
+    </script>
+
+
+<script type="text/javascript">
+  function mostrarPassword2(){
+      var cambio = document.getElementById("pass2Input");
+      if(cambio.type == "password"){
+        cambio.type = "text";
+        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+      }else{
+        cambio.type = "password";
+        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+      }
+    } 
     
-        <a class="logout" href="../db/apis/logout.php">
-            <i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
-            Cerrar Sesión
-          </a>
-    </div>
-
-    <div class="div1">
-        <div class="card">
-            <h2>Agregar Docente</h2>
-            <br>
-            <div class="input-group">
-              <label for="nombreInput">Nombre(s):</label>
-              <input type="text" id="nombreInput" placeholder="Nombre" required>
-            </div>
-            <div class="input-group">
-              <label for="apellidopInput">Apellido paterno:</label>
-              <input type="text" id="apellidopInput" placeholder="Apellido paterno" required>
-            </div>
-            <div class="input-group">
-              <label for="apellidomInput">Apellido materno:</label>
-              <input type="text" id="apellidomInput" placeholder="Apellido materno" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="matriculaInput">Numero de control:</label>
-                <input type="text" id="matriculaInput" placeholder="Número de control" required>
-            </div>
-            <div class="input-group">
-                <label for="passInput">Contraseña:</label>
-                <input type="password" id="passInput" placeholder="Contraseña" required>
-            </div>
-            <div class="input-group">
-                <label for="pass2Input">Confirme la contraseña: </label>
-                <input type="password" id="pass2Input" placeholder="Contraseña" required>
-            </div>
-            <div class="input-group">
-                <label for="fotoInput">Foto</label>
-                <input type="file" onchange="cargarFoto(event)" id="fotoInput" accept="image/*">
-                <input type="hidden" id="foto64">
-            </div>
-            
-            
-            
-            <button id="btnSend">Aceptar</button>
-          </div>
-    </div>
-
-
-
-
-<script src="./javascript/agregar_docente.js"></script>
+    $(document).ready(function () {
+    //CheckBox mostrar contraseña
+    $('#ShowPassword').click(function () {
+      $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+    });
+  });
+  </script>
 
 
 </body>

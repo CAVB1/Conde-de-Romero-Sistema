@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Docentes</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="../estilos/barra.css">
-    <link rel="stylesheet" href="../estilos/tabla.css">
-    <link rel="stylesheet" href="../estilos/boton.css">
-    <link rel="stylesheet" href="../estilos/alumnos.css">
-    <link rel="stylesheet" href="../estilos/barra1.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <meta charset="UTF-8">
+  <title>Docentes</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="../estilos/barra.css">
+ 
+  <link rel="stylesheet" href="../estilos/boton.css">
+  <link rel="stylesheet" href="../estilos/alumnos.css">
+  <link rel="stylesheet" href="../estilos/barra1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 
@@ -23,81 +24,110 @@
   <div class="sidebar">
     <div class="profile">
       <img src="../imagenes/logo-removebg-preview.png" alt="Imagen de perfil">
-      
+
     </div>
     <a href="../Administrador/docentes.html">
-			<i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Docentes -->
-			Docentes
-		</a>
+      <i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Docentes -->
+      Docentes
+    </a>
 
-		<a href="../Administrador/materias_grupos.html">
-			<i class="fas fa-users-cog"></i> <!-- Icono de Grupos y Materias -->
-			Gruos y Materias
-		</a>
-		<a href="../Administrador/alumnos.html">
-			<i class="fas fa-user"></i> <!-- Icono de Alumnos -->
-			Alumnos
-		</a>
+    <a href="../Administrador/materias_grupos.html">
+      <i class="fas fa-users-cog"></i> <!-- Icono de Grupos y Materias -->
+      Gruos y Materias
+    </a>
+    <a href="../Administrador/alumnos.html">
+      <i class="fas fa-user"></i> <!-- Icono de Alumnos -->
+      Alumnos
+    </a>
 
     <a class="logout" href="../db/apis/logout.php">
-        <i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
-        Cerrar Sesión
-      </a>
-</div>
+      <i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
+      Cerrar Sesión
+    </a>
+  </div>
 
+  <div>
     <div class="div1">
 
-        <div class="card2">
-            <h2>Agregar por grupo</h2>
-            <br>
-            <div class="input-group">
-                <select id="gruposGral">
-                    <option value="" disabled selected>Seleccionar grupo</option>
-                    
-                </select>
-            </div>
-           
-            <div class="input-group">
-                <input type="file" accept=".xlsx, .xls" id="file">
-            </div>
-            <button id="btnGral">Aceptar</button>
+      <div class="card2">
+        <h2>Agregar por grupo</h2>
+        <br>
+        <div class="input-group">
+          <select id="gruposGral">
+            <option value="" disabled selected>Seleccionar grupo</option>
+
+          </select>
         </div>
 
-        <div class="card">
-            <h2>Agregar individual</h2>
-            <br>
-            <div class="input-group">
-              <label for="nombreInput">Nombre(s):</label>
-              <input type="text" id="nombreInput" placeholder="Nombre">
-            </div>
-            <div class="input-group">
-              <label for="apellidosInput">Apellido Paterno:</label>
-              <input type="text" id="apellidopInput" placeholder="Apellidos">
-            </div>
-            <div class="input-group">
-              <label for="apellidosInput">Apellido Materno:</label>
-              <input type="text" id="apellidomInput" placeholder="Apellidos">
-            </div>
-            <div class="input-group">
-              <label for="matriculaInput">Matrícula:</label>
-              <input type="text" id="matriculaInput" placeholder="Matrícula">
-            </div>
-            <div class="input-group">
-              <label for="contrasenaInput">Contraseña:</label>
-              <input type="password" id="contrasenaInput" placeholder="Contraseña">
-            </div>
-            <div class="input-group">
-              <label for="grupoSelectInd">Grupo:</label>
-              <select id="grupoSelectInd">
-                <option value="" disabled selected>Seleccionar grupo</option>
-                
-              </select>
-            </div>
-            
-            <button id="btnInd">Aceptar</button>
-          </div>
+        <div class="input-group">
+          <input type="file" accept=".xlsx, .xls" id="file">
+        </div>
+        <button id="btnGral">Aceptar</button>
+      </div>
+
+      <div class="card">
+        <h2>Agregar individual</h2>
+        <br>
+        <div class="input-group">
+          <label for="nombreInput">Nombre(s):</label>
+          <input type="text" id="nombreInput" placeholder="Nombre">
+        </div>
+        <div class="input-group">
+          <label for="apellidosInput">Apellido Paterno:</label>
+          <input type="text" id="apellidopInput" placeholder="Apellidos">
+        </div>
+        <div class="input-group">
+          <label for="apellidosInput">Apellido Materno:</label>
+          <input type="text" id="apellidomInput" placeholder="Apellidos">
+        </div>
+        <div class="input-group">
+          <label for="matriculaInput">Matrícula:</label>
+          <input type="text" id="matriculaInput" placeholder="Matrícula">
+        </div>
+        <div class="input-group">
+          <label for="contrasenaInput">Contraseña:</label>
+          <input type="password" id="contrasenaInput" placeholder="Contraseña">
+        </div>
+        <div class="input-group">
+          <label for="grupoSelectInd">Grupo:</label>
+          <select id="grupoSelectInd">
+            <option value="" disabled selected>Seleccionar grupo</option>
+
+          </select>
+        </div>
+
+        <button id="btnInd">Aceptar</button>
+      </div>
     </div>
 
+    <div class="card3">
+
+      <table>
+        <thead>
+            <tr>
+                <th>Nivel escolar</th>
+                <th>Grupo</th>
+                <th>Ver</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Primaria</td>
+                <td>A</td>
+                <td><a href="lista_alumnos.html"><i class="fas fa-eye"></a></td>
+            </tr>
+            <tr>
+                <td>Secundaria</td>
+                <td>B</td>
+                <td><a href="lista_alumnos.html"><i class="fas fa-eye"></a></td>
+            </tr>
+            <!-- Repite este bloque para más registros -->
+        </tbody>
+    </table>
+
+    </div>
+
+  </div>
 
 
 
@@ -108,12 +138,15 @@
 
 
 
-    <!-- partial -->
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="../../estilos/script.js"></script>
-    <script src="../../estilos/script2.js"></script>
 
-    <script src="./javascript/alumnos.js"></script>
+
+
+  <!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="../../estilos/script.js"></script>
+  <script src="../../estilos/script2.js"></script>
+
+  <script src="./javascript/alumnos.js"></script>
 </body>
 
 </html>

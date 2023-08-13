@@ -18,7 +18,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   padding: 20px;
   /* Espacio interior */
@@ -33,13 +33,14 @@ body {
   background-color: #b9e6b9;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 50px;
   width: auto;
   /* Ancho relativo */
   max-width: 400px;
   /* Ancho máximo para evitar que se vuelva demasiado ancho */
   color: #2c682c;
   text-align: center;
+  margin-top: 150px;
 }
 
 .card2 {
@@ -47,9 +48,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: auto;
+  width: 1000px;
   /* Ancho relativo */
-  max-width: 400px;
+  
   /* Ancho máximo para evitar que se vuelva demasiado ancho */
   color: #2c682c;
   text-align: center;

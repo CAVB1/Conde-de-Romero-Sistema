@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Docentes</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="../estilos/barra.css">
+	
+	<link rel="stylesheet" href="../estilos/boton.css">
+	<link rel="stylesheet" href="../estilos/docentes.css">
+	<link rel="stylesheet" href="../estilos/alumnos.css">
+	<link rel="stylesheet" href="../estilos/barra1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+
+</head>
+
+<body>
+	<script src="./javascript/check_login.js"></script>
+	<!-- partial:index.partial.html -->
+	<div class="sidebar">
+		<div class="profile">
+			<img src="../imagenes/logo-removebg-preview.png" alt="Imagen de perfil">
+
+		</div>
+		<br>
+		<br>
+		<br>
+		<a href="../Administrador/docentes.html">
+			<i class="fas fa-chalkboard-teacher"></i> <!-- Icono de Docentes -->
+			Docentes
+		</a>
+
+		<a href="../Administrador/materias_grupos.html">
+			<i class="fas fa-users-cog"></i> <!-- Icono de Grupos y Materias -->
+			Gruos y Materias
+		</a>
+		<a href="../Administrador/alumnos.html">
+			<i class="fas fa-user"></i> <!-- Icono de Alumnos -->
+			Alumnos
+		</a>
+
+
+
+		<a class="logout" href="../db/apis/logout.php">
+			<i class="fas fa-sign-out-alt"></i> <!-- Icono de Cerrar Sesión -->
+			Cerrar Sesión
+		</a>
+	</div>
+
+
+	<div class="div5">
+
+        <div class="card6">
+            <h3>Grupo y Nivel</h3>
+            <input type="text" placeholder="Grupo" readonly>
+            <input type="text" placeholder="Materia" readonly>
+          </div>
+
+		<div class="cardh">
+			<h2>Lista de alumnos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Matricula</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>123456</td>
+                        <td>Juan Pérez</td>
+                    </tr>
+                    <tr>
+                        <td>789012</td>
+                        <td>María González</td>
+                    </tr>
+                    <!-- Repite este bloque para más registros -->
+                </tbody>
+            </table>
+		</div>
+
+		
+
+	</div>
+
+
+
+
+
+
+	
+</body>
+
+</html>
