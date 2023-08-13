@@ -85,10 +85,33 @@ document.body.onload = setTimeout(function () {
                     tdrubro.append(labeltd);
                     let inputtd = document.createElement("input");
                     inputtd.type = "number";
+                    inputtd.className="rubroparcial"+rubros.bloque;
                     inputtd.id = rubros.id_rubro;
                     inputtd.value = rubros.cal_final;
+                    inputtd.max=10;
+                    inputtd.min=0;
+
+                    inputtd.addEventListener("change",function(){
+                        let inputs=inputtd.parentElement.parentElement.getElementsByClassName(inputtd.className);
+                        let hs=inputtd.parentElement.parentElement.getElementsByClassName("perparcial"+rubros.bloque);
+                        let calParcial=0;
+                        for (let k=0;k<inputs.length;k++){
+                            calParcial+=(parseFloat (inputs[k].value)*parseFloat(hs[k].value) )/100
+                        }
+                        inputtd.parentElement.parentElement.querySelector(".parcial"+rubros.bloque).value=calParcial;
+
+                    })
+
+                    
 
                     tdrubro.appendChild(inputtd);
+
+                    let hid=document.createElement("input");
+                    hid.type="hidden";
+                    hid.className="perparcial"+rubros.bloque;
+                    hid.value=rubros.valor;
+
+                    tdrubro.append(hid);
 
                     newtr.append(tdrubro);
 
@@ -116,6 +139,7 @@ document.body.onload = setTimeout(function () {
 
                         let inputparcial = document.createElement("input");
                         inputparcial.type = "number";
+                        inputparcial.className="parcial"+(num_parcial+1);
                         inputparcial.id = cals[num_parcial].id_calificacion;
                         inputparcial.value = cals[num_parcial].calificacion;
 
@@ -124,6 +148,23 @@ document.body.onload = setTimeout(function () {
                         let buton=document.createElement("button");
                         buton.className="subir-button";
                         buton.innerHTML="Subir";
+
+                        buton.addEventListener("click",function(){
+                            const cal=buton.parentElement.querySelector(".parcial"+(num_parcial+1)).value;
+                            let body=new FormData();
+                            body.append("id_alumno",alumno.id_alumnos);
+                            body.append("id_docente",userID);
+                            body.append("id_materia",id_materia);
+                            body.append("calificacion",cal);
+                            body.append("bloque",num_parcial+1);
+                            console.log(body);
+
+                            let inRub=buton.parentElement.parentElement.getElementsByClassName("rubroparcial"+rubros.bloque);
+                            for(let k=0;k<inRub.length;k++){
+                                let rub=inRub[k];
+                                console.log(rub.id,rub.value);
+                            }
+                        });
 
                         tdparcial.appendChild(buton);
 
