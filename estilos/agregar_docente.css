@@ -63,3 +63,29 @@ body{
     color: white;
     cursor: pointer;
   }
+
+
+  .password-container {
+    position: relative;
+}
+
+#pass2Input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.show-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.boton{
+  background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    width: 70px;
+}
