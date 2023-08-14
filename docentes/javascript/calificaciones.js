@@ -100,6 +100,13 @@ document.body.onload = setTimeout(function () {
                         }
                         inputtd.parentElement.parentElement.querySelector(".parcial"+rubros.bloque).value=calParcial;
 
+                        let parenttr=inputtd.parentElement.parentElement;
+                            let p1=parseFloat( parenttr.querySelector(".parcial1").value);
+                            let p2=parseFloat( parenttr.querySelector(".parcial2").value);
+                            let p3=parseFloat( parenttr.querySelector(".parcial3").value);
+
+                            parenttr.querySelector(".Promedio").value=((p1+p2+p3)/3).toFixed(2);
+
                     })
 
                     
@@ -142,6 +149,10 @@ document.body.onload = setTimeout(function () {
                         inputparcial.className="parcial"+(num_parcial+1);
                         inputparcial.id = cals[num_parcial].id_calificacion;
                         inputparcial.value = cals[num_parcial].calificacion;
+                        inputparcial.readOnly=true;
+                        inputparcial.max=10;
+                        inputparcial.min=0
+                        
 
                         tdparcial.append(inputparcial)
 
@@ -190,11 +201,15 @@ document.body.onload = setTimeout(function () {
                 inputf.type="number";
                 inputf.id=alumno.id_alumnos;
                 inputf.value=0;
+                inputf.readOnly=true;
+                inputf.className="Promedio";
 
                 tdFinal.appendChild(inputf);
 
                 newtr.appendChild(tdFinal);
 
+                inputf.value=( (parseFloat(newtr.querySelector(".parcial1").value)+parseFloat(newtr.querySelector(".parcial2").value)+parseFloat(newtr.querySelector(".parcial3").value))/3).toFixed(2) ;
+                // console.log(newtr.querySelector(".parcial1"));
 
                 table_body.appendChild(newtr);
 
