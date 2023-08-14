@@ -1,44 +1,17 @@
-document.body.onload = setTimeout(function () {
+document.body.onload=setTimeout(function(){
     const urlSearchParams = new URLSearchParams(window.location.search);
-    const id_materia = urlSearchParams.get("id_materia");
-
+    const id_materia = urlSearchParams.get("id");
     const table_body = document.getElementById("table_body");
 
-    const inputs_materia = document.querySelector(".cards-container").querySelector(".card").getElementsByTagName("input");
-
-    let rubros_module = document.getElementsByClassName("card")[1];
-
-    fetch('../db/apis/get_norubros.php?id_materia=' + id_materia)
-        .then(response => response.json())
-        .then(data => {
-            if (data.num > 0) {
-                rubros_module.style.display = "none";
-            }
-        })
-        .catch(error => {
-            alert("error");
-
-        });
-    console.log(`../db/apis/materias_docente.php?nocontrol=${userID}`);
-
-    fetch(`../db/apis/materias_docente.php?nocontrol=${userID}`)
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(element => {
-                if (element.id_materias == id_materia) {
-                    inputs_materia[0].value = element.nombre_materia;
-                    inputs_materia[1].value = element.Grupo;
-                }
-            });
-        })
-        .catch(error => {
-            console.error("AÑA");
-        });
-
-    fetch('../db/apis/alumnos_bymateria.php?id_materia=' + id_materia)
+    fetch(`../db/apis/alumno_materia.php?id_materia=${id_materia}&id_alumno=${userID}`)
         .then(response => response.json())
         .then(data => {
             let alumnos_list = data[0];
+
+            document.getElementById("matricula").value=alumnos_list[0].matricula;
+            document.getElementById("nombre").value=alumnos_list[0].nombre_alumno;
+            document.getElementById("materia").value=alumnos_list[0].nombre_materia;
+            document.getElementById("docente").value=alumnos_list[0].nombre_docente;
             let rubros_list = data[1];
             const norubros = (rubros_list[0].length / 3);
             console.log(rubros_list[0].length / 3);
@@ -90,6 +63,7 @@ document.body.onload = setTimeout(function () {
                     inputtd.value = rubros.cal_final;
                     inputtd.max=10;
                     inputtd.min=0;
+                    inputtd.readOnly=true;
 
                     inputtd.addEventListener("change",function(){
                         let inputs=inputtd.parentElement.parentElement.getElementsByClassName(inputtd.className);
@@ -136,98 +110,12 @@ document.body.onload = setTimeout(function () {
                             buton.className = "subir-button";
                             buton.innerHTML = "Subir";
 
-                            buton.addEventListener("click", function () {
-                                const cal = buton.parentElement.querySelector(".parcial" + (num_parcial + 1)).value;
-                                let body = new FormData();
-                                body.append("id_alumno", alumno.id_alumnos);
-                                body.append("id_docente", userID);
-                                body.append("id_materia", id_materia);
-                                body.append("calificacion", cal);
-                                body.append("bloque", num_parcial + 1);
-                                console.log("no registrada");
-                                console.log(body);
-
-                                fetch('../db/apis/agregar_calificacion.php',{
-                                    method:'POST',
-                                    body:body
-                                })
-                                .then(response=>response.json())
-                                .then(data=>{
-
-                                })
-                                .catch(error=>{
-
-                                });
-
-                                let inRub = buton.parentElement.parentElement.getElementsByClassName("rubroparcial" + rubros.bloque);
-                                for (let k = 0; k < inRub.length; k++) {
-                                    let rub = inRub[k];
-                                    console.log(rub.id, rub.value);
-                                    let body2=new FormData();
-                                    body2.append("id_rubro",rub.id);
-                                    body2.append("calificacion",rub.value);
-                                    fetch('../db/apis/set_rubro.php',{
-                                        method:'POST',
-                                        body:body2
-                                    })
-                                    .then(response=>response.json())
-                                    .then(data=>{
-                                        
-                                    })
-                                    .catch(error=>{
-
-                                    });
-                                }
-
-                                setTimeout(function(){window.location.href=window.location.href},2000);
-                            });
+                           
                         } else {
                             buton.className = "subir-button";
                             buton.innerHTML = "Subir";
 
-                            buton.addEventListener("click", function () {
-                                const cal = buton.parentElement.querySelector(".parcial" + (num_parcial + 1));
-                                let body = new FormData();
-                                body.append("id_calificacion", cal.id);
-                                body.append("calificacion", cal.value);
-                                
-                                console.log("registrada");
-                                console.log(body);
-                                fetch('../db/apis/agregar_calificacion.php',{
-                                    method:'POST',
-                                    body:body
-                                })
-                                .then(response=>response.json())
-                                .then(data=>{
-
-                                })
-                                .catch(error=>{
-
-                                });
-
-
-                                let inRub = buton.parentElement.parentElement.getElementsByClassName("rubroparcial" + rubros.bloque);
-                                for (let k = 0; k < inRub.length; k++) {
-                                    let rub = inRub[k];
-                                    console.log(rub.id, rub.value);
-                                    let body2=new FormData();
-                                    body2.append("id_rubro",rub.id);
-                                    body2.append("calificacion",rub.value);
-                                    fetch('../db/apis/set_rubro.php',{
-                                        method:'POST',
-                                        body:body2
-                                    })
-                                    .then(response=>response.json())
-                                    .then(data=>{
-
-                                    })
-                                    .catch(error=>{
-
-                                    });
-                                }
-                                setTimeout(function(){window.location.href=window.location.href},2000);
-
-                            });
+                            
                         }
                         
                         // console.log("id " + cals.id_calificacion);
@@ -255,7 +143,6 @@ document.body.onload = setTimeout(function () {
 
                         
 
-                        tdparcial.appendChild(buton);
 
                         newtr.append(tdparcial);
                     }
@@ -296,4 +183,4 @@ document.body.onload = setTimeout(function () {
         .catch(error => {
 
         });
-}, 1000); 
+},1000)

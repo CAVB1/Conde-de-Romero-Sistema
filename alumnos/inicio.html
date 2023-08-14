@@ -22,11 +22,11 @@
     <div class="container">
         <div class="card">
             <h3>Información del Alumno</h3>
-            <input type="text" placeholder="Matrícula" readonly>
-            <input type="text" placeholder="Nombre" readonly>
-            <input type="text" placeholder="Grado" readonly>
-            <input type="text" placeholder="Grupo" readonly>
-            <input type="text" placeholder="Tutor Grupal" readonly>
+            <input type="text" placeholder="Matrícula" id="matricula" readonly>
+            <input type="text" placeholder="Nombre" id="nombre" readonly>
+            <input type="text" placeholder="Grado" id="grado" readonly>
+            <input type="text" placeholder="Grupo" id="grupo" readonly>
+            <input type="text" placeholder="Tutor Grupal" id="tutor" readonly>
         </div>
         <div class="card">
             <h3>MATERIAS</h3>
@@ -39,7 +39,7 @@
                             <th>Ver Historial</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody">
                         <tr>
                             <td>Matemáticas</td>
                             <td><input type="text" value="90" readonly></td>
@@ -57,6 +57,7 @@
             </div>
         </div>
     </div>
+    <script src="./javascript/inicio.js"></script>
 </body>
 
 </html>

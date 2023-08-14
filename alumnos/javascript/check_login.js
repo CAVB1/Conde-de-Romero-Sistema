@@ -1,3 +1,6 @@
+let userID='';
+let userNC="";
+
 fetch('../db/apis/check_login.php')
 .then(response=>response.json())
 .then(data=>{
@@ -8,6 +11,8 @@ fetch('../db/apis/check_login.php')
         window.location.href="../docentes/materias.html";
         return;
     }else if(data.nivel===3){
+        userID=data.id;
+        userNC=data.user;
         return;
     }
     console.log(data.nivel);
