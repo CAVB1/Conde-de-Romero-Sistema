@@ -4,11 +4,62 @@ document.body.onload=function(){
     const gradoSelect=document.getElementById("gradoSelect");
     const tutorSelect=document.getElementById("tutorSelect");
     const btnGrupo=document.getElementById("btnGrupo");
+    const bodyt=document.getElementById("bodyt");
 
     const nombremateriaInput=document.getElementById("nombreMateria");
     const docenteSelect=document.getElementById("docenteSelect");
     const grupoMateriaSelect=document.getElementById("grupoMateriaSelect");
     const btnMateria=document.getElementById("btnMateria");
+
+    fetch("../db/apis/all_grupos.php")
+    .then(response=>response.json())
+    .then(data=>{
+        const grupos = data[0];
+        const materiasPorGrupo = data[1];
+
+        console.log(grupos.length);
+
+        for (let i = 0; i < grupos.length; i++) {
+            console.log(grupos[i]);
+            let newtr = document.createElement("tr");
+
+            let grupo = document.createElement("td");
+            grupo.innerHTML = "Grupo " + grupos[i]['nombre_grupo'];
+
+            let nivel = document.createElement("td");
+            nivel.innerHTML = grupos[i]['nivel'];
+
+            let grado = document.createElement("td");
+            grado.innerHTML = grupos[i]['grado']+"°";
+
+            let tutor = document.createElement("td");
+            tutor.innerHTML = grupos[i]['nombre_tutor'];
+
+            let materiasCell = document.createElement("td");
+            let materiasl = materiasPorGrupo[i];
+            let gs = "";
+
+            materiasl.forEach(element => {
+                gs += element.nombre_materia + " ";
+            });
+
+            materiasCell.innerHTML = gs;
+
+            newtr.appendChild(grupo);
+            newtr.appendChild(nivel);
+            newtr.appendChild(grado);
+            newtr.appendChild(materiasCell);
+            newtr.appendChild(tutor);
+
+            bodyt.appendChild(newtr);
+        }
+       
+        
+
+    })
+    .catch(error=>{
+console.log("a")
+    })
 
     fetch('../db/apis/lista_docentes.php')
     .then(response=>response.json())
