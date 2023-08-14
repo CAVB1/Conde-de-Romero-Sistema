@@ -123,14 +123,111 @@ document.body.onload = setTimeout(function () {
                     newtr.append(tdrubro);
 
                     if ((j + 1) % norubros === 0) {
-                        let num_parcial=((j + 1) / norubros)-1;
+                        let num_parcial = ((j + 1) / norubros) - 1;
                         console.log(cals[num_parcial]);
-                        if(cals[num_parcial]==undefined){
-                            cals[num_parcial]={
-                                id_calificacion:"",
+                        let buton = document.createElement("button");
+
+                        if (cals[num_parcial] == undefined) {
+                            cals[num_parcial] = {
+                                id_calificacion: "",
                                 calificacion: 0
 
                             }
+                            buton.className = "subir-button";
+                            buton.innerHTML = "Subir";
+
+                            buton.addEventListener("click", function () {
+                                const cal = buton.parentElement.querySelector(".parcial" + (num_parcial + 1)).value;
+                                let body = new FormData();
+                                body.append("id_alumno", alumno.id_alumnos);
+                                body.append("id_docente", userID);
+                                body.append("id_materia", id_materia);
+                                body.append("calificacion", cal);
+                                body.append("bloque", num_parcial + 1);
+                                console.log("no registrada");
+                                console.log(body);
+
+                                fetch('../db/apis/agregar_calificacion.php',{
+                                    method:'POST',
+                                    body:body
+                                })
+                                .then(response=>response.json())
+                                .then(data=>{
+
+                                })
+                                .catch(error=>{
+
+                                });
+
+                                let inRub = buton.parentElement.parentElement.getElementsByClassName("rubroparcial" + rubros.bloque);
+                                for (let k = 0; k < inRub.length; k++) {
+                                    let rub = inRub[k];
+                                    console.log(rub.id, rub.value);
+                                    let body2=new FormData();
+                                    body2.append("id_rubro",rub.id);
+                                    body2.append("calificacion",rub.value);
+                                    fetch('../db/apis/set_rubro.php',{
+                                        method:'POST',
+                                        body:body2
+                                    })
+                                    .then(response=>response.json())
+                                    .then(data=>{
+                                        
+                                    })
+                                    .catch(error=>{
+
+                                    });
+                                }
+
+                                setTimeout(function(){window.location.href=window.location.href},2000);
+                            });
+                        } else {
+                            buton.className = "subir-button";
+                            buton.innerHTML = "Subir";
+
+                            buton.addEventListener("click", function () {
+                                const cal = buton.parentElement.querySelector(".parcial" + (num_parcial + 1));
+                                let body = new FormData();
+                                body.append("id_calificacion", cal.id);
+                                body.append("calificacion", cal.value);
+                                
+                                console.log("registrada");
+                                console.log(body);
+                                fetch('../db/apis/agregar_calificacion.php',{
+                                    method:'POST',
+                                    body:body
+                                })
+                                .then(response=>response.json())
+                                .then(data=>{
+
+                                })
+                                .catch(error=>{
+
+                                });
+
+
+                                let inRub = buton.parentElement.parentElement.getElementsByClassName("rubroparcial" + rubros.bloque);
+                                for (let k = 0; k < inRub.length; k++) {
+                                    let rub = inRub[k];
+                                    console.log(rub.id, rub.value);
+                                    let body2=new FormData();
+                                    body2.append("id_rubro",rub.id);
+                                    body2.append("calificacion",rub.value);
+                                    fetch('../db/apis/set_rubro.php',{
+                                        method:'POST',
+                                        body:body2
+                                    })
+                                    .then(response=>response.json())
+                                    .then(data=>{
+
+                                    })
+                                    .catch(error=>{
+
+                                    });
+                                }
+                                setTimeout(function(){window.location.href=window.location.href},2000);
+
+                            });
                         }
                         
                         // console.log("id " + cals.id_calificacion);
@@ -156,26 +253,7 @@ document.body.onload = setTimeout(function () {
 
                         tdparcial.append(inputparcial)
 
-                        let buton=document.createElement("button");
-                        buton.className="subir-button";
-                        buton.innerHTML="Subir";
-
-                        buton.addEventListener("click",function(){
-                            const cal=buton.parentElement.querySelector(".parcial"+(num_parcial+1)).value;
-                            let body=new FormData();
-                            body.append("id_alumno",alumno.id_alumnos);
-                            body.append("id_docente",userID);
-                            body.append("id_materia",id_materia);
-                            body.append("calificacion",cal);
-                            body.append("bloque",num_parcial+1);
-                            console.log(body);
-
-                            let inRub=buton.parentElement.parentElement.getElementsByClassName("rubroparcial"+rubros.bloque);
-                            for(let k=0;k<inRub.length;k++){
-                                let rub=inRub[k];
-                                console.log(rub.id,rub.value);
-                            }
-                        });
+                        
 
                         tdparcial.appendChild(buton);
 

@@ -8,8 +8,8 @@ if (isset($_GET['id_materia'])){
     $lista_cal=[];
     
     foreach($lista as $al){
-        $rubros=consultaSQL("SELECT rubros.* from rubros JOIN lista1 on rubros.fk_id_alumno=lista1.id_alumnos  WHERE lista1.id_materias=$idm and lista1.id_alumnos=".$al['id_alumnos']." ORDER by rubros.bloque asc");
-        $cals=consultaSQL("SELECT calificaciones.* from calificaciones JOIN lista1 on calificaciones.fk_id_alumno=lista1.id_alumnos  WHERE lista1.id_materias=$idm and lista1.id_alumnos=".$al['id_alumnos']);
+        $rubros=consultaSQL("SELECT * FROM rubros where fk_id_materia=$idm and fk_id_alumno=".$al['id_alumnos']." order by bloque asc");
+        $cals=consultaSQL("SELECT * FROM `calificaciones` where fk_id_materia=$idm and fk_id_alumno=".$al['id_alumnos']);
         $lista_rubros[]=$rubros;
         $lista_cal[]=$cals;
     }
